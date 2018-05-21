@@ -97,9 +97,9 @@
 
 			container = document.createElement('div');
 			jQuery(".configurator").append(container);
-
+	
 			camera = new THREE.PerspectiveCamera(45, 1024 / 400, 1, 1000);
-
+			
 			scene = new THREE.Scene();
 
 			var ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
@@ -132,6 +132,7 @@
 				object.traverse(function (child) {
 					if (child instanceof THREE.Mesh) {
 						child.material.map = texture;
+						child.castShadow = true;
 					}
 				});
 				object.position.y = -15;
@@ -152,8 +153,8 @@
 			
 			orbit = new THREE.OrbitControls(camera, renderer.domElement);
 			orbit.target = new THREE.Vector3(0, 0, 0); // set the center
-			orbit.rotateSpeed = 0.3;
-			
+			orbit.rotateSpeed = 0.2;
+			StartAutoPlay();
 			orbit.enableZoom = true;
 			//Fix Rotate only move X
 			orbit.maxDistance = 120;
