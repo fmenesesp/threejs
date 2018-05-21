@@ -19,8 +19,6 @@
 	</head>
 
 	<body>
-		<?php echo "Hello world";
-?>
 		<script>
 			var container;
 			var camera, scene, renderer, orbit;
@@ -77,6 +75,7 @@
 						}
 					});
 					object.position.y = 0;
+					
 					scene.add(object);
 				}, onProgress, onError);
 
@@ -84,7 +83,7 @@
 				renderer.setPixelRatio(window.devicePixelRatio);
 				renderer.setSize(window.innerWidth, window.innerHeight);
 				container.appendChild(renderer.domElement);
-
+				
 				window.addEventListener('resize', onWindowResize, false);
 
 
@@ -95,6 +94,9 @@
 				orbit.autoRotate = true;
 				orbit.enableZoom = true;
 				orbit.maxDistance = 200;
+
+						
+				
 
 			}
 
